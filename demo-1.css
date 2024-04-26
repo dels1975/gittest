@@ -1,0 +1,60 @@
+.space {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#container,
+#container2 {
+  width: auto;
+  background-color: #7987;
+  border-width: 2px;
+  border-style: solid;
+  border-color: chocolate;
+  padding: 10px 10px 10px 10px;
+}
+
+#parag,
+#parag2 {
+  width: auto;
+  border-width: 2px;
+  border-style: solid;
+  border-color: teal;
+  padding: 10px 10px 10px 10px;
+}
+
+#word,
+#word2 {
+  width: auto;
+  border-width: 2px;
+  border-style: solid;
+  border-color: violet;
+  padding: 1px 1px 1px 1px;
+}
+
+.methodAndProperties {
+  font-weight: bold;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+tr {
+  display: flex;
+}
+
+th,
+td {
+  flex: 1;
+  border: 1px solid black;
+  padding: 8px;
+  margin: 1px;
+  text-align: left;
+}

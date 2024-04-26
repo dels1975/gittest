@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript per il Browser - Demo</title>
+    <link rel="stylesheet" href="./demo-1.css" />
+    <script defer src="demo-1.js"></script>
+  </head>
+  <body>
+    <article>
+      <h1>Javascript per il Browser - Demo</h1>
+      <div id="container">
+        <p id="parag">
+          Bubbling degli eventi: <span id="word">Clicca quì</span>
+        </p>
+      </div>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h2>
+        Javascript per il Browser - Demo con alternativa a stopPropagation()
+      </h2>
+      <div id="container2">
+        <p id="parag2">
+          Bubbling degli eventi: <span id="word2">Clicca quì</span>
+        </p>
+      </div>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h2>
+        Javascript per il Browser - Demo per Inibire Azioni di default
+        (disabilitare il menù contestuale con preventDefault())
+      </h2>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h3>Recap sul metodo addEventListener</h3>
+      <code>
+        <ul>
+          <li>elem.addEventListener(evento, function(e) {...}, capturing)</li>
+          <li>
+            <span class="methodAndProperties">evento:</span> il nome dell'evento
+            da gestire, ad esempio 'click'
+          </li>
+          <li>
+            <span class="methodAndProperties">capturing:</span> impostare a true
+            se si vuole intercettare l'evento durante la fase di capturing (è
+            false di default)
+          </li>
+          <li>
+            <span class="methodAndProperties">e:</span> argomento della funzione
+            evemt handler, rappresenta l'evento stesso, alcuni suoi metodi e
+            proprietà sono:
+            <ul>
+              <li>
+                <span class="methodAndProperties">target:</span>l'elemento
+                target iniziale dell'evento
+              </li>
+              <li>
+                <span class="methodAndProperties">currentTarget:</span>il target
+                corrente
+              </li>
+              <li>
+                <span class="methodAndProperties">preventDefault():</span
+                >impedisce l'azione di default del browser
+              </li>
+              <li>
+                <span class="methodAndProperties">stopPropagation():</span
+                >arresta la propagazione dell'evento
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </code>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h2>Che cos'è il DOM</h2>
+      <code>
+        <ul>
+          <li>
+            Il DOM è una
+            <span class="methodAndProperties">rappresentazione gerarchica</span>
+            (ad albero) di tutti gli elemnti di un documento HTML: ogni elemento
+            dell'HTML è un <span class="methodAndProperties">nodo</span>, legato
+            agli altri da relazioni gerarchiche.
+          </li>
+          <li>
+            Tipi principali di nodi:
+            <ul>
+              <li>
+                <span class="methodAndProperties">Element node:</span>
+                rappresentano i tag HTML
+              </li>
+              <li>
+                <span class="methodAndProperties">Text node:</span>
+                rappresentano le stringhe di testo
+              </li>
+              <li>
+                <span class="methodAndProperties">Comment node:</span>
+                rappresentano i commenti
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </code>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h2>Proprietà per navigare il DOM</h2>
+      <code>
+        <ul>
+          <li>
+            Ogno nodo del DOM è un oggetto che espone proprietà per raggiungere
+            nodi adiacenti
+          </li>
+        </ul>
+
+        <div class="table-container">
+          <table class="flex-table">
+            <thead>
+              <tr>
+                <th>Solo Element Node</th>
+                <th>Tutti i nodi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ParentElement</td>
+                <td>parentNode</td>
+              </tr>
+              <tr>
+                <td>children</td>
+                <td>childNodes</td>
+              </tr>
+              <tr>
+                <td>previousElementSibling</td>
+                <td>previousSibling</td>
+              </tr>
+              <tr>
+                <td>nextElementSibling</td>
+                <td>nextSibling</td>
+              </tr>
+              <tr>
+                <td>firstElementChild</td>
+                <td>firstChild</td>
+              </tr>
+              <tr>
+                <td>lastElementChild</td>
+                <td>lastChild</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </code>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h2>Ulteriori metodi per navigare il DOM</h2>
+      <code>
+        <ul>
+          <li>
+            I metodi per ricercare nel DOM, oltre che da document, sono esposti
+            anche dagli altri elementi.
+          </li>
+          <li>Metodi per selezionare gli elementi node:</li>
+          <ul>
+            <li>
+              <span class="methodAndProperties">elem.matches(css query):</span>
+              restituisce true se elem matcha con il selettore, false,
+              altrimenti.
+            </li>
+            <li>
+              <span class="methodAndProperties">elem.closest(css query):</span>
+              effettua la ricercanavigando l'albero del DOM verso l'alto e
+              restituisce il primo elemento che matcha con il selettore, a
+              partire da elem, poi il parent di elem, poi il parent del parent,
+              ...
+            </li>
+          </ul>
+        </ul>
+      </code>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h2>Metodi per gestire le classi</h2>
+      <code>
+        <ul>
+          <li>Metodi per gestire le classi:</li>
+          <ul>
+            <li>
+              <span class="methodAndProperties"
+                >elem.classList.add(class):</span
+              >
+              aggiunge la classe passata per argomento ad elem.
+            </li>
+            <li>
+              <span class="methodAndProperties"
+                >elem.classList.remove(class):</span
+              >
+              rimuove la classe passata per argomento da elem.
+            </li>
+            <li>
+              <span class="methodAndProperties"
+                >elem.classList.toggle(class):</span
+              >
+              se elem ha la classe passata per argomento, la aggiunge,
+              altrimenti la rimuove.
+            </li>
+            <li>
+              <span class="methodAndProperties"
+                >elem.classList.contains(class):</span
+              >
+              restituisce true se elem ha la classe passata per argomento, false
+              altrimenti.
+            </li>
+          </ul>
+        </ul>
+      </code>
+    </article>
+
+    <hr class="space" />
+
+    <article>
+      <h2>data-* e dataset</h2>
+      <code>
+        <ul>
+          <li>
+            In HTML si possono definire attributi personalizzati, purchè inizino
+            con 'data-', cosiddetti data-*
+          </li>
+          <ul>
+            <li>
+              <span class="methodAndProperties">Esempi:</span>
+              &lt;div class="user" data-name="Mario" data-surname="Rossi"&gt;
+              <!-- Content goes here -->
+              &lt;/div&gt;
+            </li>
+          </ul>
+          <li>
+            Tali attributi sono accessibili in Javascript tramite la proprietà
+            dataset.
+          </li>
+          <ul>
+            <li>
+              <span class="methodAndProperties">Esempio:</span>
+              elem.dataset.name, elem.dataset.surname
+            </li>
+            <li>
+              Attributi che nell'HTML contengono il trattino si indicano, in
+              Javascript, con la camel notation <br />
+              (esempio: data-user-name si accede attraverso dataset.userName)
+            </li>
+          </ul>
+        </ul>
+      </code>
+    </article>
+  </body>
+</html>
