@@ -11,7 +11,7 @@ let page = {
       });
     }
 
-    document.getElementById("name").addEventListener("input", function (e) {
+    document.getElementById("name").addEventListener("input", (e) => {
       // l'evento da intercettare è input che intercetta anche il "copia e incolla"
       // mentre l'evento change si scatena quando il fuoco esce dal campo e quindi non è molto appropriato
       // mentre l'evento input non supporta il "copia e incolla" e quindi non è molto appropriato
