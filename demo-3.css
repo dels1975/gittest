@@ -1,0 +1,28 @@
+.space {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.methodAndProperties {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.focus {
+  background-color: #ccccff !important;
+}
+
+.error {
+  background-color: #ffcccc !important;
+}
+
+.ok {
+  background-color: #ccffcc !important;
+}

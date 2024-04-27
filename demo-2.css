@@ -1,3 +1,12 @@
+.space {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 .hidden {
   display: none;
+}
+
+.methodAndProperties {
+  font-weight: bold;
 }
